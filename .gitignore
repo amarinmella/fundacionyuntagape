@@ -16,3 +16,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Node.js dependencies
+node_modules/

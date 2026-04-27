@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/* ─── Tokens de diseño - Fundación Yuntagape ─── */
+@theme {
+  /* Colores */
+  --color-on-tertiary: #ffffff;
+  --color-on-secondary: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-primary-fixed-variant: #561cb7;
+  --color-on-surface-variant: #4a4454;
+  --color-inverse-on-surface: #ebf1ff;
+  --color-secondary-container: #ffac52;
+  --color-tertiary-container: #815dd9;
+  --color-on-surface: #111c2c;
+  --color-surface-tint: #6e3dd0;
+  --color-outline: #7b7485;
+  --color-on-tertiary-fixed-variant: #522aa7;
+  --color-surface-container: #e7eeff;
+  --color-on-tertiary-container: #fffbff;
+  --color-surface-dim: #cfdaf1;
+  --color-secondary-fixed: #ffdcbd;
+  --color-on-primary-container: #fffbff;
+  --color-surface-variant: #d8e3fa;
+  --color-tertiary-fixed: #e9ddff;
+  --color-background: #f9f9ff;
+  --color-surface-container-low: #f0f3ff;
+  --color-on-secondary-fixed-variant: #693c00;
+  --color-surface: #f9f9ff;
+  --color-on-primary: #ffffff;
+  --color-secondary: #8a5100;
+  --color-tertiary: #6843be;
+  --color-on-secondary-fixed: #2c1600;
+  --color-on-primary-fixed: #24005b;
+  --color-primary-fixed-dim: #d1bcff;
+  --color-on-tertiary-fixed: #23005c;
+  --color-on-error: #ffffff;
+  --color-surface-bright: #f9f9ff;
+  --color-surface-container-highest: #d8e3fa;
+  --color-on-background: #111c2c;
+  --color-inverse-primary: #d1bcff;
+  --color-secondary-fixed-dim: #ffb86f;
+  --color-tertiary-fixed-dim: #d0bcff;
+  --color-outline-variant: #ccc3d6;
+  --color-error-container: #ffdad6;
+  --color-error: #ba1a1a;
+  --color-inverse-surface: #263142;
+  --color-on-secondary-container: #724100;
+  --color-primary: #6c3acd;
+  --color-primary-fixed: #eaddff;
+  --color-primary-container: #8557e8;
+  --color-on-error-container: #93000a;
+  --color-surface-container-high: #dee8ff;
+
+  /* Tipografías */
+  --font-headline-lg: "Plus Jakarta Sans", sans-serif;
+  --font-body-md: "Lexend", sans-serif;
+  --font-headline-xl: "Plus Jakarta Sans", sans-serif;
+  --font-headline-md: "Plus Jakarta Sans", sans-serif;
+  --font-label-md: "Lexend", sans-serif;
+  --font-body-lg: "Lexend", sans-serif;
+
+  /* Tamaños de fuente */
+  --text-headline-lg: 32px;
+  --text-headline-xl: 48px;
+  --text-headline-md: 24px;
+  --text-body-md: 16px;
+  --text-body-lg: 18px;
+  --text-label-md: 14px;
+
+  /* Espaciado */
+  --spacing-margin-desktop: 48px;
+  --spacing-base-unit: 8px;
+  --spacing-margin-mobile: 16px;
+  --spacing-container-max-width: 1280px;
+  --spacing-gutter: 24px;
+
+  /* Border radius */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
