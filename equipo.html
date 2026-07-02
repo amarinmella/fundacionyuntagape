@@ -12,6 +12,7 @@
 <meta property="og:image" content="https://yuntagape.cl/images/fundador.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="js/main.js" defer></script>
 <link rel="stylesheet" href="css/output.css"/>
 <style>
     .ambient-shadow { box-shadow: 0 8px 30px rgba(108, 58, 205, 0.08); }
@@ -29,26 +30,39 @@
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
 
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 shadow-sm">
+<header class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm font-['Plus_Jakarta_Sans','Lexend'] text-sm font-medium tracking-wide">
 <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-<a class="text-2xl font-black tracking-tight text-purple-600 dark:text-purple-400 no-underline" href="inicio.html">Fundación Yuntagape</a>
-<div class="hidden md:flex items-center space-x-8 font-['Plus_Jakarta_Sans','Lexend'] text-sm font-medium tracking-wide">
-<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 hover:opacity-80 transition-all duration-300 cursor-pointer active:scale-95" href="inicio.html">Inicio</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 hover:opacity-80 transition-all duration-300 cursor-pointer active:scale-95" href="servicios.html">Servicios</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 hover:opacity-80 transition-all duration-300 cursor-pointer active:scale-95" href="quienes.html">A Quiénes Acompañamos</a>
-<a class="text-purple-600 dark:text-purple-400 border-b-2 border-purple-600 pb-1 cursor-pointer active:scale-95" href="equipo.html">Nuestro Equipo</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 hover:opacity-80 transition-all duration-300 cursor-pointer active:scale-95" href="contacto.html">Contacto</a>
+<div class="flex items-center gap-3">
+<a href="inicio.html" class="flex items-center gap-3 no-underline cursor-pointer active:scale-95">
+<span aria-hidden="true" class="material-symbols-outlined text-purple-600 dark:text-purple-400 text-3xl icon-fill" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+<span class="text-2xl font-black tracking-tight text-purple-600 dark:text-purple-400">Fundación Yuntagape</span>
+</a>
 </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="inicio.html">Inicio</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="servicios.html">Servicios</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="quienes.html">A Quiénes Acompañamos</a>
+<a class="text-purple-600 dark:text-purple-400 border-b-2 border-purple-600 pb-1 cursor-pointer active:scale-95" href="equipo.html">Nuestro Equipo</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="contacto.html">Contacto</a>
+</nav>
 <div class="flex items-center gap-4">
-<a class="hidden md:block bg-primary text-on-primary font-label-md text-label-md px-6 py-2.5 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 no-underline" href="contacto.html">Contáctanos</a>
-<button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+<!-- Botón Selector de Tema -->
+<button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-yellow-400 hover:opacity-80 transition-all cursor-pointer active:scale-95" aria-label="Cambiar tema">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<a href="contacto.html" class="hidden md:block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:opacity-90 transition-opacity shadow-sm no-underline">
+                    Contáctanos
+                </a>
+<!-- Mobile menu button -->
+<button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2">
 <span class="w-6 h-0.5 bg-slate-600 block"></span>
 <span class="w-6 h-0.5 bg-slate-600 block"></span>
 <span class="w-6 h-0.5 bg-slate-600 block"></span>
 </button>
 </div>
 </div>
-<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-lg">
+<!-- Mobile Menu -->
+<nav id="mobile-menu" class="hidden md:hidden bg-surface-container-lowest border-t border-slate-100 dark:border-slate-800 shadow-lg">
 <div class="flex flex-col px-6 py-4 gap-4">
 <a class="text-slate-600 hover:text-purple-500 py-2 border-b border-slate-100" href="inicio.html">Inicio</a>
 <a class="text-slate-600 hover:text-purple-500 py-2 border-b border-slate-100" href="servicios.html">Servicios</a>
@@ -56,8 +70,8 @@
 <a class="text-purple-600 font-semibold py-2 border-b border-slate-100" href="equipo.html">Nuestro Equipo</a>
 <a class="text-slate-600 hover:text-purple-500 py-2" href="contacto.html">Contacto</a>
 </div>
-</div>
 </nav>
+</header>
 
 <main class="flex-grow pt-24 pb-20">
 
@@ -75,18 +89,16 @@ Conoce a quienes hacen posible nuestra misión: profesionales comprometidos con 
 
 <!-- Founder Biography -->
 <section class="max-w-7xl mx-auto px-6 mb-20">
-<div class="bg-white rounded-[2rem] overflow-hidden ambient-shadow border border-outline-variant/30">
+<div class="bg-surface-container-lowest rounded-[2rem] overflow-hidden ambient-shadow border border-outline-variant/30">
 <div class="flex flex-col lg:flex-row items-center gap-0">
-<!-- Founder Image -->
-<div class="w-full lg:w-5/12 relative">
-<div class="aspect-[3/4] lg:aspect-auto lg:h-full min-h-[400px] lg:min-h-[550px] relative overflow-hidden">
-<img alt="Padre Eduardo Rodríguez Yunta, Fundador de Fundación Yuntagape" class="w-full h-full object-cover" src="images/fundadora.png"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-white/30"></div>
+<div class="w-full lg:w-4/12 flex items-center justify-center p-8 lg:p-12">
+<div class="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-[2rem] overflow-hidden shadow-md border border-outline-variant/20 relative">
+<img alt="Fundador de Fundación Yuntagape" class="w-full h-full object-cover" src="images/fundador.jpg"/>
 </div>
 </div>
 <!-- Founder Bio -->
-<div class="w-full lg:w-7/12 p-8 md:p-12 lg:p-16">
-<div class="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-primary font-label-md text-label-md mb-6">
+<div class="w-full lg:w-8/12 p-8 lg:pl-0 lg:pr-16 lg:py-16 flex flex-col justify-center">
+<div class="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-primary font-label-md text-label-md mb-6 w-fit">
 <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
 Fundador
 </div>
@@ -98,12 +110,37 @@ Fundador
 <p>A través de más de 70 publicaciones y una decena de libros, el Padre Eduardo ha explorado la intersección entre la ética de la investigación, la espiritualidad y la dignidad humana. Su experiencia como capellán en centros de cáncer le permitió comprender que el apoyo técnico es fundamental, pero insuficiente si no va de la mano de un sentido profundo de comunidad.</p>
 <p>Inspirado por la palabra quechua <em class="text-primary font-medium">"Yuntagape"</em> —que evoca la unión y el trabajo colaborativo—, creó esta fundación como un puente donde la ciencia, la ética y la fe se unen para ofrecer una respuesta integral a quienes más lo necesitan.</p>
 </div>
-<div class="flex flex-wrap gap-3 mt-8">
+<div class="flex flex-wrap gap-3" style="margin-top: 4rem !important; padding-top: 1rem !important;">
 <span class="bg-surface-container px-4 py-2 rounded-full text-on-surface-variant font-label-md text-label-md">Genética y Bioética</span>
 <span class="bg-surface-container px-4 py-2 rounded-full text-on-surface-variant font-label-md text-label-md">Ética de la Investigación</span>
 <span class="bg-surface-container px-4 py-2 rounded-full text-on-surface-variant font-label-md text-label-md">Acompañamiento Espiritual</span>
 <span class="bg-surface-container px-4 py-2 rounded-full text-on-surface-variant font-label-md text-label-md">Liderazgo Social</span>
 </div>
+</div>
+</div>
+</div>
+
+<!-- Publications Section (Separate Card below biography) -->
+<div class="mt-12 bg-surface-container-low rounded-[2rem] p-8 md:p-12 border border-outline-variant/20 shadow-sm reveal">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">menu_book</span>
+Publicaciones y Producción Científica del Padre Eduardo
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/30 shadow-sm">
+<span class="block font-headline-lg text-primary text-3xl font-bold mb-1">72</span>
+<span class="text-sm text-on-surface font-semibold block mb-2">Artículos en Revistas Científicas</span>
+<span class="block text-xs text-on-surface-variant leading-relaxed">23 de genética de cáncer, 29 de ética de investigación, 12 de bioética clínica, 8 de espiritualidad.</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/30 shadow-sm">
+<span class="block font-headline-lg text-primary text-3xl font-bold mb-1">16</span>
+<span class="text-sm text-on-surface font-semibold block mb-2">Capítulos de Libros</span>
+<span class="block text-xs text-on-surface-variant leading-relaxed">9 de ética de investigación, 7 de bioética clínica.</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/30 shadow-sm">
+<span class="block font-headline-lg text-primary text-3xl font-bold mb-1">13</span>
+<span class="text-sm text-on-surface font-semibold block mb-2">Libros Publicados</span>
+<span class="block text-xs text-on-surface-variant leading-relaxed">1 de genética de cáncer, 5 de ética de investigación, 5 de bioética clínica, 2 de espiritualidad.</span>
 </div>
 </div>
 </div>
@@ -122,9 +159,9 @@ Directorio
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Director 1 -->
-<div class="bg-white rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover animate-fade-in animate-delay-1">
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover reveal delay-100">
 <div class="aspect-[4/3] overflow-hidden">
-<img alt="Presidente del Directorio" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/director1.png"/>
+<img alt="Carlos Andrés Morales" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/director1.png"/>
 </div>
 <div class="p-6 text-center">
 <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-1">Carlos Andrés Morales</h3>
@@ -133,20 +170,20 @@ Directorio
 </div>
 </div>
 <!-- Director 2 -->
-<div class="bg-white rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover animate-fade-in animate-delay-2">
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover reveal delay-200">
 <div class="aspect-[4/3] overflow-hidden">
-<img alt="Vicepresidenta del Directorio" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/director2.png"/>
+<img alt="Valentina Paz Sepúlveda" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/director2.png"/>
 </div>
 <div class="p-6 text-center">
 <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-1">Valentina Paz Sepúlveda</h3>
 <p class="font-label-md text-label-md text-primary mb-3">Vicepresidenta</p>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm">Psicóloga clínica infantil con más de 15 años de experiencia en intervención temprana.</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Psicóloga clínica infantil con más de 15 años de experiencia en intervention temprana.</p>
 </div>
 </div>
 <!-- Director 3 -->
-<div class="bg-white rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover animate-fade-in animate-delay-3">
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover reveal delay-300">
 <div class="aspect-[4/3] overflow-hidden">
-<img alt="Secretario del Directorio" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/director3.png"/>
+<img alt="Fernando Ignacio Vega" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/director3.png"/>
 </div>
 <div class="p-6 text-center">
 <h3 class="font-headline-md text-[20px] font-semibold text-on-surface mb-1">Fernando Ignacio Vega</h3>
@@ -171,9 +208,9 @@ Colaboradores
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 <!-- Collaborator 1 -->
-<div class="bg-white rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover animate-fade-in animate-delay-1">
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover reveal delay-100">
 <div class="aspect-square overflow-hidden">
-<img alt="Psicóloga Infantil" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/colaborador1.png"/>
+<img alt="Camila Belén Torres" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/colaborador1.png"/>
 </div>
 <div class="p-5 text-center">
 <h3 class="font-headline-md text-[18px] font-semibold text-on-surface mb-1">Camila Belén Torres</h3>
@@ -182,9 +219,9 @@ Colaboradores
 </div>
 </div>
 <!-- Collaborator 2 -->
-<div class="bg-white rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover animate-fade-in animate-delay-2">
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover reveal delay-200">
 <div class="aspect-square overflow-hidden">
-<img alt="Trabajador Social" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/colaborador2.png"/>
+<img alt="Matías Eduardo Reyes" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/colaborador2.png"/>
 </div>
 <div class="p-5 text-center">
 <h3 class="font-headline-md text-[18px] font-semibold text-on-surface mb-1">Matías Eduardo Reyes</h3>
@@ -193,9 +230,9 @@ Colaboradores
 </div>
 </div>
 <!-- Collaborator 3 -->
-<div class="bg-white rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover animate-fade-in animate-delay-3">
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover reveal delay-300">
 <div class="aspect-square overflow-hidden">
-<img alt="Terapeuta Ocupacional" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/colaborador3.png"/>
+<img alt="Francisca Ignacia Muñoz" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/colaborador3.png"/>
 </div>
 <div class="p-5 text-center">
 <h3 class="font-headline-md text-[18px] font-semibold text-on-surface mb-1">Francisca Ignacia Muñoz</h3>
@@ -204,9 +241,9 @@ Colaboradores
 </div>
 </div>
 <!-- Collaborator 4 -->
-<div class="bg-white rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover animate-fade-in animate-delay-4">
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden ambient-shadow border border-outline-variant/20 card-hover reveal delay-400">
 <div class="aspect-square overflow-hidden">
-<img alt="Educadora Diferencial" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/colaborador4.png"/>
+<img alt="Andrea Sofía Pizarro" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="images/colaborador4.png"/>
 </div>
 <div class="p-5 text-center">
 <h3 class="font-headline-md text-[18px] font-semibold text-on-surface mb-1">Andrea Sofía Pizarro</h3>
@@ -220,7 +257,7 @@ Colaboradores
 
 <!-- CTA Section -->
 <section class="py-20 px-6">
-<div class="max-w-4xl mx-auto bg-gradient-to-br from-primary to-primary-container rounded-[2rem] p-12 md:p-16 text-center text-white relative overflow-hidden">
+<div class="max-w-4xl mx-auto bg-gradient-to-br from-primary to-primary-container rounded-[2rem] p-12 md:p-16 text-center text-white relative overflow-hidden reveal">
 <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 <div class="relative z-10">
 <h2 class="font-headline-lg text-headline-lg mb-4">¿Quieres ser parte de nuestro equipo?</h2>
@@ -232,38 +269,34 @@ Colaboradores
 
 </main>
 
-<!-- Footer -->
-<footer class="w-full py-12 bg-slate-50 dark:bg-gray-950 border-t border-slate-200 dark:border-slate-800">
+<footer class="bg-slate-50 dark:bg-gray-950 font-['Lexend'] text-sm text-slate-500 dark:text-slate-400 w-full py-12 border-t border-slate-200 dark:border-slate-800">
 <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="text-lg font-bold text-slate-900 dark:text-white">Fundación Yuntagape</div>
-<div class="flex flex-col space-y-4 font-['Lexend'] text-sm text-slate-500 dark:text-slate-400">
-<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200" href="inicio.html">Inicio</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200" href="servicios.html">Servicios</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200" href="quienes.html">A Quiénes Acompañamos</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200" href="equipo.html">Nuestro Equipo</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200" href="contacto.html">Contacto</a>
+<div class="flex flex-col gap-4">
+<span class="text-lg font-bold text-slate-900 dark:text-white">Fundación Yuntagape</span>
+<p class="font-body-md text-body-md text-slate-500 dark:text-slate-400">Acompañando el desarrollo integral con profesionalismo y empatía.</p>
 </div>
-<div class="font-['Lexend'] text-sm text-slate-500 dark:text-slate-400 md:text-right">
-© 2024 Fundación Yuntagape. All rights reserved.
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md font-semibold text-slate-900 dark:text-white">Enlaces</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="inicio.html">Inicio</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="servicios.html">Servicios</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="quienes.html">A Quiénes Acompañamos</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="equipo.html">Nuestro Equipo</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="contacto.html">Contacto</a>
+</nav>
 </div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md font-semibold text-slate-900 dark:text-white">Involúcrate</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="contacto.html">Voluntariado</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="contacto.html">Donar</a>
+</nav>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center">
+<p>© <span id="current-year">2026</span> Fundación Yuntagape. Todos los derechos reservados.</p>
 </div>
 </footer>
-
-<script>
-// Intersection Observer for fade-in animations
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animationPlayState = 'running';
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1 });
-document.querySelectorAll('.animate-fade-in').forEach(el => {
-    el.style.animationPlayState = 'paused';
-    observer.observe(el);
-});
-</script>
 <!-- WhatsApp Button -->
 <a href="https://wa.me/56958711213" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:bg-[#20bd5a] hover:scale-110 transition-all duration-300 z-50">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">

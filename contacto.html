@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/output.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Lexend:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="js/main.js" defer></script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -23,23 +23,31 @@
 </head>
 <body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col pt-20">
 <!-- TopNavBar -->
-<nav class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm">
+<header class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm font-['Plus_Jakarta_Sans','Lexend'] text-sm font-medium tracking-wide">
 <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-<a href="inicio.html" class="text-2xl font-black tracking-tight text-purple-600 dark:text-purple-400 font-headline-md text-headline-md no-underline">Fundación Yuntagape</a>
-<!-- Desktop Nav -->
-<ul class="hidden md:flex space-x-8 items-center font-['Plus_Jakarta_Sans','Lexend'] text-sm font-medium tracking-wide">
-<li><a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 hover:opacity-80 transition-all duration-300 cursor-pointer active:scale-95" href="inicio.html">Inicio</a></li>
-<li><a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 hover:opacity-80 transition-all duration-300 cursor-pointer active:scale-95" href="servicios.html">Servicios</a></li>
-<li><a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 hover:opacity-80 transition-all duration-300 cursor-pointer active:scale-95" href="quienes.html">A Quiénes Acompañamos</a></li>
-<li><a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 hover:opacity-80 transition-all duration-300 cursor-pointer active:scale-95" href="equipo.html">Nuestro Equipo</a></li>
-<li><a class="text-purple-600 dark:text-purple-400 border-b-2 border-purple-600 pb-1 hover:opacity-80 transition-all duration-300 cursor-pointer active:scale-95" href="contacto.html">Contacto</a></li>
-</ul>
+<div class="flex items-center gap-3">
+<a href="inicio.html" class="flex items-center gap-3 no-underline cursor-pointer active:scale-95">
+<span aria-hidden="true" class="material-symbols-outlined text-purple-600 dark:text-purple-400 text-3xl icon-fill" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+<span class="text-2xl font-black tracking-tight text-purple-600 dark:text-purple-400">Fundación Yuntagape</span>
+</a>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="inicio.html">Inicio</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="servicios.html">Servicios</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="quienes.html">A Quiénes Acompañamos</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="equipo.html">Nuestro Equipo</a>
+<a class="text-purple-600 dark:text-purple-400 border-b-2 border-purple-600 pb-1 hover:opacity-80 transition-all duration-300 cursor-pointer active:scale-95" href="contacto.html">Contacto</a>
+</nav>
 <div class="flex items-center gap-4">
-<a href="contacto.html" class="hidden md:block bg-primary text-on-primary font-label-md text-label-md px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity no-underline">
-                Contáctanos
-            </a>
+<!-- Botón Selector de Tema -->
+<button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-yellow-400 hover:opacity-80 transition-all cursor-pointer active:scale-95" aria-label="Cambiar tema">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<a href="contacto.html" class="hidden md:block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:opacity-90 transition-opacity shadow-sm no-underline">
+                    Contáctanos
+                </a>
 <!-- Mobile menu button -->
-<button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+<button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2">
 <span class="w-6 h-0.5 bg-slate-600 block"></span>
 <span class="w-6 h-0.5 bg-slate-600 block"></span>
 <span class="w-6 h-0.5 bg-slate-600 block"></span>
@@ -47,7 +55,7 @@
 </div>
 </div>
 <!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-lg">
+<nav id="mobile-menu" class="hidden md:hidden bg-surface-container-lowest border-t border-slate-100 dark:border-slate-800 shadow-lg">
 <div class="flex flex-col px-6 py-4 gap-4">
 <a class="text-slate-600 hover:text-purple-500 py-2 border-b border-slate-100" href="inicio.html">Inicio</a>
 <a class="text-slate-600 hover:text-purple-500 py-2 border-b border-slate-100" href="servicios.html">Servicios</a>
@@ -55,12 +63,12 @@
 <a class="text-slate-600 hover:text-purple-500 py-2 border-b border-slate-100" href="equipo.html">Nuestro Equipo</a>
 <a class="text-purple-600 font-semibold py-2" href="contacto.html">Contacto</a>
 </div>
-</div>
 </nav>
+</header>
 <!-- Main Content Canvas -->
 <main class="flex-grow w-full max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
 <!-- Header Section -->
-<div class="text-center mb-16 max-w-3xl mx-auto">
+<div class="text-center mb-16 max-w-3xl mx-auto reveal">
 <h1 class="font-headline-xl text-headline-xl text-primary-fixed-variant mb-6 tracking-tight">
                 Contáctanos y Busca Apoyo
             </h1>
@@ -71,9 +79,12 @@
 <!-- Contact Bento Grid -->
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 <!-- Form Section -->
-<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-8 shadow-[0_8px_30px_rgb(108,58,205,0.05)] border border-outline-variant/30">
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-8 shadow-[0_8px_30px_rgb(108,58,205,0.05)] border border-outline-variant/30 reveal">
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Envíanos un mensaje</h2>
-<form id="contact-form" class="space-y-6" onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden'); this.reset(); setTimeout(() => document.getElementById('success-msg').classList.add('hidden'), 5000);">
+<form id="contact-form" class="space-y-6">
+<input type="hidden" name="_subject" value="Nuevo mensaje de contacto - Fundación Yuntagape">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
 <label class="font-label-md text-label-md text-on-surface-variant" for="name">Nombre completo</label>
@@ -118,7 +129,7 @@
 <!-- Info & Map Section -->
 <div class="lg:col-span-5 space-y-8">
 <!-- Info Card -->
-<div class="bg-surface-container-low rounded-xl p-8 shadow-[0_4px_20px_rgb(108,58,205,0.03)] border border-outline-variant/20">
+<div class="bg-surface-container-low rounded-xl p-8 shadow-[0_4px_20px_rgb(108,58,205,0.03)] border border-outline-variant/20 reveal delay-200">
 <h3 class="font-headline-md text-headline-md text-on-surface mb-6">Información de Contacto</h3>
 <div class="space-y-6">
 <div class="flex items-start space-x-4">
@@ -145,7 +156,7 @@
 </div>
 <div>
 <p class="font-label-md text-label-md text-on-surface font-medium mb-1">Correo Electrónico</p>
-<p class="font-body-md text-body-md text-on-surface-variant">contacto@yuntagape.org</p>
+<p class="font-body-md text-body-md text-on-surface-variant">contacto@yuntagape.cl</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
@@ -160,7 +171,7 @@
 </div>
 </div>
 <!-- Map Placeholder -->
-<div class="w-full h-64 bg-surface-container-highest rounded-xl overflow-hidden relative shadow-[0_4px_20px_rgb(108,58,205,0.03)] border border-outline-variant/20">
+<div class="w-full h-64 bg-surface-container-highest rounded-xl overflow-hidden relative shadow-[0_4px_20px_rgb(108,58,205,0.03)] border border-outline-variant/20 reveal delay-300">
 <img alt="Ubicación de la Fundación" class="w-full h-full object-cover opacity-80" src="images/quienes_familia.png"/>
 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
 <div class="bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
@@ -172,20 +183,32 @@
 </div>
 </main>
 <!-- Footer -->
-<footer class="bg-slate-50 dark:bg-gray-950 w-full py-12 border-t border-slate-200 dark:border-slate-800 mt-auto">
+<footer class="bg-slate-50 dark:bg-gray-950 font-['Lexend'] text-sm text-slate-500 dark:text-slate-400 w-full py-12 border-t border-slate-200 dark:border-slate-800 mt-auto">
 <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="text-lg font-bold text-slate-900 dark:text-white font-['Lexend']">Fundación Yuntagape</div>
-<div class="flex flex-col space-y-4">
-<a class="font-['Lexend'] text-sm text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200" href="inicio.html">Inicio</a>
-<a class="font-['Lexend'] text-sm text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200" href="servicios.html">Servicios</a>
+<div class="flex flex-col gap-4">
+<span class="text-lg font-bold text-slate-900 dark:text-white font-['Lexend']">Fundación Yuntagape</span>
+<p class="font-body-md text-body-md text-slate-500 dark:text-slate-400">Acompañando el desarrollo integral con profesionalismo y empatía.</p>
 </div>
-<div class="flex flex-col space-y-4">
-<a class="font-['Lexend'] text-sm text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200" href="quienes.html">A Quiénes Acompañamos</a>
-<a class="font-['Lexend'] text-sm text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200" href="contacto.html">Contacto</a>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md font-semibold text-slate-900 dark:text-white font-['Lexend']">Enlaces</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="inicio.html">Inicio</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="servicios.html">Servicios</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="quienes.html">A Quiénes Acompañamos</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="equipo.html">Nuestro Equipo</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="contacto.html">Contacto</a>
+</nav>
 </div>
-<div class="col-span-1 md:col-span-3 text-center mt-8 font-['Lexend'] text-sm text-slate-500 dark:text-slate-400 pt-4 border-t border-slate-200/50 dark:border-slate-800/50">
-                © 2024 Fundación Yuntagape. All rights reserved.
-            </div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md font-semibold text-slate-900 dark:text-white font-['Lexend']">Involúcrate</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="contacto.html">Voluntariado</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 underline transition-all ease-in-out duration-200 w-max" href="contacto.html">Donar</a>
+</nav>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center">
+<p>© <span id="current-year">2026</span> Fundación Yuntagape. Todos los derechos reservados.</p>
 </div>
 </footer>
 <!-- WhatsApp Button -->
