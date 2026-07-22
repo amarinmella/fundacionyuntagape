@@ -1,48 +1,99 @@
 <!DOCTYPE html>
 
-<html class="light" lang="es"><head>
+<html class="dark" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Fundación Yuntagape - Inicio</title>
-<meta name="description" content="Sitio web oficial de la Fundación Yuntagape. Acompañamos el camino hacia el desarrollo pleno de niños y adolescentes mediante apoyo psicopedagógico y terapéutico."/>
+<title>Fundación Yuntagape - Inicio | Acompañamiento Terapéutico y Educativo</title>
+<meta name="description" content="Sitio web oficial de la Fundación Yuntagape. Acompañamos el camino hacia el desarrollo pleno de niños, niñas y adolescentes mediante apoyo psicopedagógico, psicológico y terapéutico."/>
+<meta name="keywords" content="Fundación Yuntagape, psicopedagogía, TEA, autismo, desarrollo infantil, orientación familiar, apoyo educativo, terapia ocupacional, psicología infantil, Chile"/>
+<meta name="author" content="Fundación Yuntagape"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#6C3ACD"/>
 <link rel="canonical" href="https://yuntagape.cl/inicio.html"/>
+
+<!-- Preconnect Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+
+<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Fundación Yuntagape - Inicio"/>
-<meta property="og:description" content="Sitio web oficial de la Fundación Yuntagape. Acompañamos el camino hacia el desarrollo pleno de niños y adolescentes mediante apoyo psicopedagógico y terapéutico."/>
+<meta property="og:site_name" content="Fundación Yuntagape"/>
+<meta property="og:locale" content="es_CL"/>
+<meta property="og:title" content="Fundación Yuntagape - Acompañamiento Terapéutico y Educativo"/>
+<meta property="og:description" content="Acompañamos el camino hacia el desarrollo pleno de niños, niñas y adolescentes mediante apoyo psicopedagógico y terapéutico especializado."/>
 <meta property="og:url" content="https://yuntagape.cl/inicio.html"/>
 <meta property="og:image" content="https://yuntagape.cl/images/hero_fundacion.png"/>
+<meta property="og:image:alt" content="Profesionales de la Fundación Yuntagape acompañando a niños"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Fundación Yuntagape - Acompañamiento Terapéutico y Educativo"/>
+<meta name="twitter:description" content="Acompañamos el camino hacia el desarrollo pleno de niños, niñas y adolescentes mediante apoyo psicopedagógico y terapéutico."/>
+<meta name="twitter:image" content="https://yuntagape.cl/images/hero_fundacion.png"/>
+<meta name="twitter:image:alt" content="Profesionales de la Fundación Yuntagape acompañando a niños"/>
+
 <link rel="stylesheet" href="css/output.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="js/main.js" defer></script>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Fundación Yuntagape",
+  "alternateName": "Yuntagape",
+  "url": "https://yuntagape.cl",
+  "logo": "https://yuntagape.cl/images/logo_yuntagape.png",
+  "image": "https://yuntagape.cl/images/hero_fundacion.png",
+  "description": "Organización dedicada al acompañamiento terapéutico, psicopedagógico y educativo de niños, niñas y adolescentes, promoviendo el desarrollo integral.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CL"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+56958711213",
+    "contactType": "customer service",
+    "email": "contacto@yuntagape.cl",
+    "availableLanguage": ["Spanish"]
+  },
+  "sameAs": [
+    "https://wa.me/56958711213"
+  ]
+}
+</script>
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- Enlace de Salto para Accesibilidad (WCAG) -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-purple-600 focus:text-white focus:outline-none focus:ring-2 focus:ring-purple-400">
+  Saltar al contenido principal
+</a>
 <!-- TopNavBar -->
 <header class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm font-['Plus_Jakarta_Sans','Lexend'] text-sm font-medium tracking-wide">
 <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
 <div class="flex items-center gap-3">
-<a href="inicio.html" class="flex items-center gap-3 no-underline cursor-pointer active:scale-95">
+<a href="inicio.html" class="flex items-center gap-3 no-underline cursor-pointer active:scale-95" aria-label="Ir a página de Inicio - Fundación Yuntagape">
 <span aria-hidden="true" class="material-symbols-outlined text-purple-600 dark:text-purple-400 text-3xl icon-fill" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
 <span class="text-2xl font-black tracking-tight text-purple-600 dark:text-purple-400">Fundación Yuntagape</span>
 </a>
 </div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-purple-600 dark:text-purple-400 border-b-2 border-purple-600 pb-1 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="inicio.html">Inicio</a>
+<nav class="hidden md:flex items-center gap-8" aria-label="Navegación principal">
+<a class="text-purple-600 dark:text-purple-400 border-b-2 border-purple-600 pb-1 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="inicio.html" aria-current="page">Inicio</a>
 <a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="servicios.html">Servicios</a>
 <a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="quienes.html">A Quiénes Acompañamos</a>
 <a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="equipo.html">Nuestro Equipo</a>
 <a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 cursor-pointer active:scale-95 hover:opacity-80 transition-all duration-300" href="contacto.html">Contacto</a>
 </nav>
 <div class="flex items-center gap-4">
-<!-- Botón Selector de Tema -->
-<button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-yellow-400 hover:opacity-80 transition-all cursor-pointer active:scale-95" aria-label="Cambiar tema">
-<span class="material-symbols-outlined">dark_mode</span>
-</button>
 <a href="contacto.html" class="hidden md:block bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:opacity-90 transition-opacity shadow-sm no-underline">
                     Contáctanos
                 </a>
 <!-- Mobile menu button -->
-<button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2">
+<button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Abrir menú de navegación" aria-controls="mobile-menu" aria-expanded="false">
 <span class="w-6 h-0.5 bg-slate-600 block"></span>
 <span class="w-6 h-0.5 bg-slate-600 block"></span>
 <span class="w-6 h-0.5 bg-slate-600 block"></span>
@@ -50,9 +101,9 @@
 </div>
 </div>
 <!-- Mobile Menu -->
-<nav id="mobile-menu" class="hidden md:hidden bg-surface-container-lowest border-t border-slate-100 dark:border-slate-800 shadow-lg">
+<nav id="mobile-menu" class="hidden md:hidden bg-surface-container-lowest border-t border-slate-100 dark:border-slate-800 shadow-lg" aria-label="Navegación móvil">
 <div class="flex flex-col px-6 py-4 gap-4">
-<a class="text-purple-600 font-semibold py-2 border-b border-slate-100" href="inicio.html">Inicio</a>
+<a class="text-purple-600 font-semibold py-2 border-b border-slate-100" href="inicio.html" aria-current="page">Inicio</a>
 <a class="text-slate-600 hover:text-purple-500 py-2 border-b border-slate-100" href="servicios.html">Servicios</a>
 <a class="text-slate-600 hover:text-purple-500 py-2 border-b border-slate-100" href="quienes.html">A Quiénes Acompañamos</a>
 <a class="text-slate-600 hover:text-purple-500 py-2 border-b border-slate-100" href="equipo.html">Nuestro Equipo</a>
@@ -60,7 +111,7 @@
 </div>
 </nav>
 </header>
-<main class="flex-grow pt-20">
+<main id="main-content" class="flex-grow pt-20">
 <!-- Hero Section -->
 <section class="relative min-h-[819px] flex items-center justify-center overflow-hidden bg-surface-container-lowest">
 <div class="absolute inset-0 z-0">
@@ -247,8 +298,8 @@
 </div>
 </footer>
 <!-- WhatsApp Button -->
-<a href="https://wa.me/56958711213" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:bg-[#20bd5a] hover:scale-110 transition-all duration-300 z-50">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+<a href="https://wa.me/56958711213" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp a Fundación Yuntagape" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:bg-[#20bd5a] hover:scale-110 transition-all duration-300 z-50">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
         <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
     </svg>
 </a>

@@ -1,57 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ─── 1. GESTIÓN DEL MODO OSCURO (DARK MODE) ───
+    // ─── 1. GESTIÓN DEL MODO OSCURO PERMANENTE (DARK MODE ONLY) ───
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+    localStorage.setItem('theme', 'dark');
+
     const themeToggleBtn = document.getElementById('theme-toggle');
-    
-    // Función para aplicar el tema correcto
-    const applyTheme = (theme) => {
-        if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
-            if (themeToggleBtn) {
-                themeToggleBtn.innerHTML = '<span class="material-symbols-outlined text-yellow-400">light_mode</span>';
-            }
-        } else {
-            document.documentElement.classList.add('light');
-            document.documentElement.classList.remove('dark');
-            if (themeToggleBtn) {
-                themeToggleBtn.innerHTML = '<span class="material-symbols-outlined text-slate-700">dark_mode</span>';
-            }
-        }
-    };
-
-    // Inicializar el tema basado en localStorage o en la preferencia del sistema
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else if (systemPrefersDark) {
-        applyTheme('dark');
-    } else {
-        applyTheme('light');
-    }
-
-    // Escuchador de clic para alternar el tema
     if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-            const isDark = document.documentElement.classList.contains('dark');
-            const newTheme = isDark ? 'light' : 'dark';
-            localStorage.setItem('theme', newTheme);
-            applyTheme(newTheme);
-        });
+        themeToggleBtn.style.display = 'none'; // Ocultar conmutador ya que el tema es exclusivo en modo oscuro
     }
 
-    // ─── 2. MENÚ MÓVIL CENTRALIZADO ───
+    // ─── 2. MENÚ MÓVIL CENTRALIZADO Y ACCESIBLE ───
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (mobileMenuBtn && mobileMenu) {
         // Remover el atributo onclick inline si existiera para evitar doble ejecución
         mobileMenuBtn.removeAttribute('onclick');
+        mobileMenuBtn.setAttribute('aria-controls', 'mobile-menu');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.setAttribute('aria-label', 'Abrir menú de navegación');
         
         mobileMenuBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            const isExpanded = !isHidden;
+            mobileMenuBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+            mobileMenuBtn.setAttribute('aria-label', isExpanded ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
         });
 
         // Cerrar el menú si se hace clic fuera de él
@@ -60,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 !mobileMenu.contains(e.target) && 
                 !mobileMenuBtn.contains(e.target)) {
                 mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.setAttribute('aria-label', 'Abrir menú de navegación');
             }
         });
     }
